@@ -46,8 +46,8 @@ Follow these steps to run the project locally:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/themarneilx/portfolio-v3.git
-    cd portfolio-v3
+    git clone https://github.com/joncabs/portfolio-v2.git
+    cd portfolio-v2
     ```
 
 2.  **Install dependencies:**
@@ -55,12 +55,24 @@ Follow these steps to run the project locally:
     npm install
     ```
 
-3.  **Run the development server:**
+3.  **SMTP Configuration (for Contact Form):**
+    The contact form requires SMTP credentials to send emails. Create a `.env.local` file in the root of the project and add the following environment variables:
+
+    ```
+    SMTP_HOST=your_smtp_host_address
+    SMTP_PORT=your_smtp_port (e.g., 587 for TLS, 465 for SSL)
+    SMTP_USER=your_smtp_username
+    SMTP_PASS=your_smtp_password
+    SMTP_SECURE=true_or_false (true for SSL/465, false for TLS/587)
+    ```
+    Replace the placeholder values with your actual SMTP server details.
+
+4.  **Run the development server:**
     ```bash
     npm run dev
     ```
 
-4.  **Open your browser:**
+5.  **Open your browser:**
     Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
 ## 📜 License
