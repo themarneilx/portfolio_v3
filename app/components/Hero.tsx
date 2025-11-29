@@ -27,8 +27,8 @@ export default function Hero() {
             <a href="#work" className="px-6 py-3 bg-white text-black text-sm font-semibold rounded-lg hover:bg-zinc-200 transition-colors">
               View Projects
             </a>
-            <a href="https://github.com/joncabs" target="_blank" className="px-6 py-3 bg-surface border border-border text-white text-sm font-semibold rounded-lg hover:bg-border transition-colors flex items-center gap-2">
-              <i className="fa-brands fa-github"></i> GitHub
+            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-surface border border-border text-white text-sm font-semibold rounded-lg hover:bg-border transition-colors flex items-center gap-2">
+              <i className="fa-solid fa-file-pdf"></i> View CV
             </a>
           </div>
         </div>
