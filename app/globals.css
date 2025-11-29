@@ -1,0 +1,148 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+/* Base Styles */
+body {
+  background-color: #050505;
+  color: #e4e4e7;
+  overflow-x: hidden;
+}
+
+/* Utility Classes */
+.no-scroll {
+  overflow: hidden !important;
+  height: 100vh;
+}
+
+/* Boot Screen Styles */
+.cursor-block {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: #22c55e;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* Component Styles */
+
+/* Tech Badge */
+.tech-badge {
+  background-color: #0f0f0f;
+  border: 1px solid #27272a;
+  color: #a1a1aa;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tech-badge:hover {
+  border-color: #52525b;
+  color: #fff;
+  background-color: #18181b;
+  transform: translateY(-1px);
+}
+
+.tech-badge i {
+  font-size: 0.85rem;
+}
+
+/* Project Card */
+.project-card {
+  background-color: #0f0f0f;
+  border: 1px solid #27272a;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  border-color: #3f3f46;
+  transform: translateY(-4px);
+}
+
+.project-header {
+  background-color: #121215;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid #27272a;
+}
+
+/* Form Input */
+.dark-input {
+  width: 100%;
+  background-color: #0f0f0f;
+  border: 1px solid #27272a;
+  color: #e4e4e7;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  outline: none;
+  transition: border-color 0.2s;
+  font-size: 0.875rem;
+}
+
+.dark-input:focus {
+  border-color: #52525b;
+}
+
+/* Social Button */
+.social-btn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3b82f6;
+  color: white;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5);
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  background-color: #2563eb;
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.6);
+}
