@@ -20,12 +20,16 @@ body {
   height: 100vh;
 }
 
+.text-term-green {
+  color: #00ff00;
+}
+
 /* Boot Screen Styles */
 .cursor-block {
   display: inline-block;
   width: 8px;
   height: 16px;
-  background: #22c55e;
+  background: #e4e4e7;
   animation: blink 1s step-end infinite;
   vertical-align: middle;
 }

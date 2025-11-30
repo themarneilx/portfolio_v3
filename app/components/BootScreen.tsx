@@ -8,17 +8,19 @@ interface Log {
 }
 
 const bootLogs: Log[] = [
-  { text: "BIOS Date 01/01/25 15:22:11 Ver: 1.0.2", delay: 50 },
-  { text: "CPU: Intel(R) Core(TM) i7-12700H @ 2.30GHz", delay: 100 },
+  { text: "BIOS Date 11/10/25 03:22:11 Ver: 3.0.1", delay: 50 },
+  { text: "CPU: AMD Ryzen 5 3600 @ 4.21GHz", delay: 100 },
   { text: "Memory Test: 16384K OK", delay: 150 },
-  { text: "Detecting Primary Master ... JMC_SSD_1TB", delay: 250 },
+  { text: "Detecting Primary Master ... /dev/nvme0n1", delay: 250 },
   { text: "Booting from local disk...", delay: 400 },
+  { text: "Loading kernel modules for web_deployment...", delay: 450 },
+  { text: "[ OK ] Loaded node_modules.", delay: 475 },
   { text: "[ OK ] Mounted root filesystem.", delay: 500 },
   { text: "[ OK ] Started Network Manager.", delay: 600 },
-  { text: "[ OK ] Loaded modules: Next.js, Angular, Node, AWS.", delay: 800 },
+  { text: "[ OK ] Loaded modules: Next.js, Node.js, SMTP, AWS.", delay: 800 },
   { text: "[ OK ] Reached target Graphical Interface.", delay: 1000 },
-  { text: "Initializing JMC Portfolio v2.0...", delay: 1200 },
-  { text: "Welcome User.", delay: 1500 }
+  { text: "Initializing Marneilx Portfolio v3.0...", delay: 1200 },
+  { text: "Welcome User :)", delay: 1500 }
 ]
 
 export default function BootScreen({ onComplete }: { onComplete: () => void }) {
@@ -64,7 +66,7 @@ export default function BootScreen({ onComplete }: { onComplete: () => void }) {
       <div className="text-gray-400 space-y-0.5 mb-2">
         {logs.map((log, index) => (
           <div key={index} dangerouslySetInnerHTML={{ 
-            __html: log.replace("[ OK ]", '<span class="text-term-green font-bold">[ OK ]</span>') 
+            __html: log.replace("[ OK ]", '[ <span class="text-term-green font-bold">OK</span> ]') 
           }} />
         ))}
       </div>

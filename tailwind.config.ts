@@ -20,7 +20,7 @@ const config: Config = {
         primary: '#3b82f6',
         secondary: '#a1a1aa',
         term: {
-          green: '#22c55e',
+          green: '#00ff00',
         },
       },
     },
