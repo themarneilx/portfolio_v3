@@ -28,7 +28,7 @@ export default function Hero() {
               View Projects
             </a>
             <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-surface border border-border text-white text-sm font-semibold rounded-lg hover:bg-border transition-colors flex items-center gap-2">
-              <i className="fa-solid fa-file-pdf"></i> View CV
+              <i className="fa-solid fa-file-pdf"></i> View Resume
             </a>
           </div>
         </div>
