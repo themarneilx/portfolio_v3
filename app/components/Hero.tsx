@@ -35,7 +35,7 @@ export default function Hero() {
 
         {/* Right: Big Picture Frame */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end gs-hero-reveal opacity-0">
-          <div className="relative w-full max-w-sm aspect-[4/5] bg-surface rounded-xl border border-border p-1">
+          <div className="relative w-full max-w-sm aspect-square bg-surface rounded-xl border border-border p-1">
             {/* Corners */}
             <div className="absolute top-3 left-3 w-2 h-2 border-t border-l border-blue-500/50"></div>
             <div className="absolute top-3 right-3 w-2 h-2 border-t border-r border-blue-500/50"></div>

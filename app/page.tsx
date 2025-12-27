@@ -10,7 +10,7 @@ import ContactForm from './components/ContactForm'
 import { useAnimationController } from '@/app/hooks/useAnimationController'
 
 export default function Home() {
-  const [bootState, setBootState] = useState<'booting' | 'fading' | 'complete'>('booting')
+  const [bootState, setBootState] = useState<'booting' | 'fading' | 'complete'>('complete')
 
   // Centralized animation controller that listens to bootState
   useAnimationController(bootState)
