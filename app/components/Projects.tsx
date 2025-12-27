@@ -36,17 +36,17 @@ export default function Projects() {
         <div className="project-card group gs-reveal opacity-0">
           <div className="project-header">
             <div className="relative w-full h-full flex items-center justify-center">
-              <Image src="/rental.png" alt="Rental Management System" fill className="object-cover" />
+              <Image src="/rental2.png" alt="Rental Management System" fill className="object-cover" />
             </div>
             <div className="absolute top-4 right-4 text-[10px] bg-black border border-border px-2 py-0.5 rounded text-zinc-500">Automated Billing</div>
           </div>
           <div className="p-6 flex flex-col flex-1">
             <h3 className="text-white font-bold text-lg mb-2">Rental Management System</h3>
             <p className="text-zinc-400 text-xs leading-relaxed mb-6 flex-1">
-              Property management dashboard for landlords to automate tenant tracking and payments. <span className="text-yellow-500">Currently in development.</span>
+              Property management dashboard for landlords to automate tenant tracking and payments. <span className="text-yellow-500">Beta</span>
             </p>
             <div className="flex flex-wrap gap-2 text-[10px] text-zinc-500 font-mono border-t border-border pt-4">
-              <span>Angular</span> • <span>Express</span> • <span>MariaDB</span>
+              <span>Next.js</span> • <span>Node.js</span> • <span>PostgreSQL</span>
             </div>
           </div>
         </div>
@@ -66,6 +66,25 @@ export default function Projects() {
             </p>
             <div className="flex flex-wrap gap-2 text-[10px] text-zinc-500 font-mono border-t border-border pt-4">
               <span>Angular</span> • <span>Gen AI</span> • <span>MariaDB</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Project 4 */}
+        <div className="project-card group gs-reveal opacity-0">
+          <div className="project-header">
+            <div className="relative w-full h-full flex items-center justify-center">
+              <Image src="/wishpay2.png" alt="WishPay" fill className="object-cover" />
+            </div>
+            <div className="absolute top-4 right-4 text-[10px] bg-black border border-border px-2 py-0.5 rounded text-zinc-500">Finance</div>
+          </div>
+          <div className="p-6 flex flex-col flex-1">
+            <h3 className="text-white font-bold text-lg mb-2">WishPay</h3>
+            <p className="text-zinc-400 text-xs leading-relaxed mb-6 flex-1">
+              Smart financial goal tracking application designed to help you manage your money by clearly separating your Necessities (Needs) from your Wishes (Wants).
+            </p>
+            <div className="flex flex-wrap gap-2 text-[10px] text-zinc-500 font-mono border-t border-border pt-4">
+              <span>Next.js</span> • <span>PostgreSQL</span> • <span>Drizzle ORM</span>
             </div>
           </div>
         </div>
