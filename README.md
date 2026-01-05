@@ -2,7 +2,7 @@
 
 A modern, high-performance portfolio website built with **Next.js 16**, **Tailwind CSS**, and **GSAP**. This project showcases my skills as a Full Stack Developer, featuring a custom boot sequence animation, a responsive design, and a smooth user experience.
 
-## 🚀 Features
+##  Features
 
 *   **Modern Tech Stack:** Built with Next.js (App Router), React, and TypeScript.
 *   **Advanced Animations:** Powered by GSAP (GreenSock Animation Platform) for smooth scroll-triggered reveals and a unique boot sequence.
@@ -10,7 +10,7 @@ A modern, high-performance portfolio website built with **Next.js 16**, **Tailwi
 *   **Optimized Performance:** Fast loading times and smooth transitions.
 *   **Contact Integration:** Functional contact form with email capabilities.
 
-## 🛠️ Technical Stack
+##  Technical Stack
 
 ### Frontend
 *   **Framework:** [Next.js 16](https://nextjs.org/)
@@ -24,7 +24,7 @@ A modern, high-performance portfolio website built with **Next.js 16**, **Tailwi
 *   **Deployment:** Vercel (Recommended) or Netlify
 *   **Package Manager:** npm
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 ├── app/
@@ -40,7 +40,7 @@ A modern, high-performance portfolio website built with **Next.js 16**, **Tailwi
 └── package.json         # Dependencies and scripts
 ```
 
-## ⚡ Getting Started
+##  Getting Started
 
 Follow these steps to run the project locally:
 
@@ -75,7 +75,7 @@ Follow these steps to run the project locally:
 5.  **Open your browser:**
     Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
-## 📜 License
+##  License
 
 This project is open-source and available under the [MIT License](LICENSE).
 
