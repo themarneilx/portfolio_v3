@@ -28,7 +28,7 @@ export default function BootScreen({ onComplete }: { onComplete: () => void }) {
   const bootScreenRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    let timeouts: NodeJS.Timeout[] = []
+    const timeouts: NodeJS.Timeout[] = []
     let totalDelay = 0
 
     bootLogs.forEach((log) => {
