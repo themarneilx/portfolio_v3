@@ -66,12 +66,12 @@ export default function BootScreen({ onComplete }: { onComplete: () => void }) {
       <div className="text-gray-400 space-y-0.5 mb-2">
         {logs.map((log, index) => (
           <div key={index} dangerouslySetInnerHTML={{ 
-            __html: log.replace("[ OK ]", '[ <span class="text-term-green font-bold">OK</span> ]') 
+            __html: log.replace("[ OK ]", '[ <span class="text-term-white font-bold">OK</span> ]') 
           }} />
         ))}
       </div>
-      <div className="text-term-green">
-        <span className="text-gray-500">root@JMC-OS:~$</span> <span className="cursor-block"></span>
+      <div className="text-term-white mt-2">
+        <span className="text-zinc-500">root@sys:~#</span> <span className="cursor-block bg-term-white"></span>
       </div>
     </div>
   )

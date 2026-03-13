@@ -33,106 +33,150 @@ export default function ContactForm() {
     };
 
     return (
-        <section id="contact" className="py-20 px-6 max-w-6xl mx-auto border-t border-border relative">
+        <section id="contact" className="py-24 px-6 max-w-6xl mx-auto border-t border-zinc-900 pb-32">
+      <div className="flex items-center gap-6 mb-16 gs-reveal opacity-0">
+        <h2 className="text-white font-display font-bold text-4xl uppercase tracking-tighter">Contact</h2>
+        <div className="h-px bg-zinc-800 flex-1"></div>
+      </div>
+
+      <div className="grid lg:grid-cols-2 gap-16">
+        
+        {/* Left: Info */}
+        <div className="gs-reveal opacity-0 w-full xl:w-[90%] flex flex-col justify-center">
+          <h3 className="text-white font-display font-bold text-5xl sm:text-7xl uppercase tracking-tighter leading-[0.9] mb-8">
+            Let&apos;s <br/><span className="text-zinc-500">Talk</span>
+          </h3>
+          <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-10 font-mono">
+            Currently open for new opportunities. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
+          </p>
+
+          <div className="space-y-4 mb-12 font-mono">
+            <div className="flex items-center gap-4 bento-card p-4 group">
+              <div className="w-10 h-10 rounded border border-zinc-800 bg-zinc-950 flex items-center justify-center text-zinc-500 group-hover:text-white transition-colors">
+                <i className="fa-solid fa-envelope"></i>
+              </div>
+              <span className="text-zinc-300 text-sm group-hover:text-white transition-colors font-bold tracking-tight">jmcabahug4@gmail.com</span>
+            </div>
             
-            <div className="grid lg:grid-cols-2 gap-16">
-                {/* Info Left */}
-                <div className="gs-reveal opacity-0">
-                    <h2 className="text-white font-display font-bold text-3xl mb-8">Contact Information</h2>
-                    
-                    <div className="space-y-6 mb-12">
-                        <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center text-zinc-400">
-                                <i className="fa-solid fa-envelope"></i>
-                            </div>
-                            <div className="text-zinc-400 text-sm">
-                                <a href="mailto:joncabs200@gmail.com" className="hover:underline">joncabs200@gmail.com</a>
-                            </div>
-                        </div>
-                        
-                        <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center text-zinc-400">
-                                <i className="fa-solid fa-envelope"></i>
-                            </div>
-                            <div className="text-zinc-400 text-sm">
-                                <a href="mailto:marneilx@proton.me" className="hover:underline">marneilx@proton.me</a>
-                            </div>
-                        </div>
+            <div className="flex items-center gap-4 bento-card p-4 group">
+              <div className="w-10 h-10 rounded border border-zinc-800 bg-zinc-950 flex items-center justify-center text-zinc-500 group-hover:text-white transition-colors">
+                <i className="fa-solid fa-location-dot"></i>
+              </div>
+              <span className="text-zinc-300 text-sm group-hover:text-white transition-colors font-bold tracking-tight">Mandaue City, Cebu, Philippines</span>
+            </div>
+          </div>
 
-                        <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center text-zinc-400">
-                                <i className="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div className="text-zinc-400 text-sm">Mandaue City, Cebu, Philippines</div>
-                        </div>
+          <div className="flex gap-4">
+            <a href="https://github.com/themarneilx" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="GitHub">
+              <i className="fa-brands fa-github text-xl"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/jonmarneil/" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="LinkedIn">
+              <i className="fa-brands fa-linkedin-in text-xl"></i>
+            </a>
+            <a href="#" className="social-btn" aria-label="Twitter">
+              <i className="fa-brands fa-twitter text-xl"></i>
+            </a>
+            <a href="#" className="social-btn" aria-label="Instagram">
+              <i className="fa-brands fa-instagram text-xl"></i>
+            </a>
+          </div>
+        </div>
 
-                        <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center text-zinc-400">
-                                <i className="fa-brands fa-github"></i>
-                            </div>
-                            <div className="text-zinc-400 text-sm">
-                                <a href="https://github.com/themarneilx" target="_blank" rel="noopener noreferrer" className="hover:underline">github.com/themarneilx</a>
-                            </div>
-                        </div>
-                    </div>
+        {/* Right: Form */}
+        <div className="gs-reveal opacity-0 w-full xl:w-[90%] ml-auto bento-card p-8 lg:p-12 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(-45deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+          
+          <form id="contact-form" onSubmit={handleSubmit} className="relative z-10 flex flex-col justify-between h-full space-y-6">
+            <div className="space-y-4">
+              <div className="space-y-1">
+                <label htmlFor="name" className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">Name</label>
+                <input 
+                  type="text" 
+                  id="name"
+                  name="name" 
+                  placeholder="John Doe" 
+                  required
+                  disabled={isPending}
+                  className="minimal-input"
+                />
+              </div>
+              <div className="space-y-1">
+                <label htmlFor="email" className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">Email</label>
+                <input 
+                  type="email" 
+                  id="email"
+                  name="email" 
+                  placeholder="john@example.com" 
+                  required
+                  disabled={isPending}
+                  className="minimal-input"
+                />
+              </div>
 
-                    <h3 className="text-white font-bold text-xl mb-6">Connect with me</h3>
-                    <div className="flex gap-4">
-                        <a href="https://www.facebook.com/jon.cabs.3/" target="_blank" rel="noopener noreferrer" className="social-btn"><i className="fa-brands fa-facebook-f text-lg"></i></a>
-                        <a href="https://www.instagram.com/joncabahug/" target="_blank" rel="noopener noreferrer" className="social-btn"><i className="fa-brands fa-instagram text-lg"></i></a>
-                        <a href="https://www.facebook.com/TokatechPC" target="_blank" rel="noopener noreferrer" className="social-btn"><i className="fa-solid fa-screwdriver-wrench text-lg"></i></a>
-                        <a href="https://github.com/themarneilx" target="_blank" rel="noopener noreferrer" className="social-btn"><i className="fa-brands fa-github text-lg"></i></a>
-                        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="social-btn"><i className="fa-solid fa-file-pdf text-lg"></i></a>
-                    </div>
-                </div>
+              <div className="space-y-1">
+                <label htmlFor="subject" className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">Subject</label>
+                <input 
+                  type="text" 
+                  id="subject"
+                  name="subject" 
+                  placeholder="Project Inquiry" 
+                  required
+                  disabled={isPending}
+                  className="minimal-input"
+                />
+              </div>
 
-                {/* Form Right */}
-                <div className="bg-surface border border-border rounded-xl p-8 gs-reveal opacity-0">
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                        
-                        <div>
-                            <label className="block text-[10px] uppercase tracking-wider text-zinc-500 mb-1">Your Name</label>
-                            <input type="text" name="name" placeholder="John Doe" className="dark-input" required />
-                        </div>
-
-                        <div>
-                            <label className="block text-[10px] uppercase tracking-wider text-zinc-500 mb-1">Your Email</label>
-                            <input type="email" name="email" placeholder="john@example.com" className="dark-input" required />
-                        </div>
-
-                        <div>
-                            <label className="block text-[10px] uppercase tracking-wider text-zinc-500 mb-1">Subject</label>
-                            <input type="text" name="subject" placeholder="Project Inquiry" className="dark-input" required />
-                        </div>
-
-                        <div>
-                            <label className="block text-[10px] uppercase tracking-wider text-zinc-500 mb-1">Your Message</label>
-                            <textarea name="message" rows={4} placeholder="Tell me about your project..." className="dark-input resize-none" required></textarea>
-                        </div>
-
-                        <button type="submit" disabled={isPending} className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center">
-                            {isPending ? (
-                                <>
-                                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2"></span>
-                                    Sending...
-                                </>
-                            ) : 'Send Message'}
-                        </button>
-                    </form>
-                </div>
+              <div className="space-y-1">
+                <label htmlFor="message" className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">Message</label>
+                <textarea 
+                  id="message"
+                  name="message" 
+                  rows={4} 
+                  placeholder="Tell me about your project..." 
+                  required
+                  disabled={isPending}
+                  className="minimal-input resize-none"
+                ></textarea>
+              </div>
             </div>
 
-             {showToast && (
-                <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-[100]">
-                    <div className={`px-6 py-3 rounded-full shadow-lg flex items-center gap-3 ${toastType === 'success' ? 'bg-zinc-800 text-white border border-green-500/50' : 'bg-red-900/80 text-white border border-red-500/50'}`}>
-                         {toastType === 'success' && <i className="fa-solid fa-check-circle text-green-500"></i>}
-                         {toastType === 'error' && <i className="fa-solid fa-circle-exclamation text-red-500"></i>}
-                        <span className="text-sm font-medium">{toastMessage}</span>
-                    </div>
-                </div>
-            )}
+            <button 
+              type="submit" 
+              disabled={isPending} 
+              className="w-full py-3.5 bg-white text-zinc-950 font-bold tracking-wide rounded-lg transition-all hover:bg-zinc-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center transform hover:-translate-y-1"
+            >
+              {isPending ? (
+                <>
+                  <span className="w-4 h-4 border-2 border-zinc-400 border-t-zinc-950 rounded-full animate-spin mr-2"></span>
+                  Sending...
+                </>
+              ) : 'Send Message'}
+            </button>
+          </form>
+        </div>
+      </div>
+
+      {showToast && (
+          <div className="fixed bottom-8 right-8 z-[100] animate-fade-in">
+            <div className={`bento-card px-6 py-4 flex items-center gap-4 ${
+              toastType === 'success' 
+                ? 'border-white text-white' 
+                : 'border-red-500 text-red-500'
+            }`}>
+              <i className={`fa-solid text-xl ${
+                toastType === 'success' 
+                  ? 'fa-circle-check' 
+                  : 'fa-circle-exclamation'
+              }`}></i>
+              <div>
+                <p className="font-bold text-sm tracking-tight">{toastType === 'success' ? 'Success' : 'Error'}</p>
+                <p className="text-sm opacity-90">{toastMessage}</p>
+              </div>
+            </div>
+          </div>
+        )}
             
-            <div className="mt-20 border-t border-border pt-8 text-center text-[10px] text-zinc-600">
+            <div className="mt-20 border-t border-zinc-900 pt-8 text-center text-[10px] text-zinc-600">
                 © 2025 Jon Marneil Cabahug
             </div>
         </section>

@@ -20,26 +20,46 @@ export function useAnimationController(bootState: 'booting' | 'fading' | 'comple
 
         // Hero Animations
         gsap.fromTo(".gs-hero-reveal", 
-          { y: 30, opacity: 0 },
+          { y: 40, opacity: 0 },
           {
             y: 0,
             opacity: 1,
-            duration: 1,
-            stagger: 0.15,
-            ease: "power3.out"
+            duration: 1.2,
+            stagger: 0.1,
+            ease: "power4.out"
           }
         )
 
-        // Scroll Reveal Animations
-        const revealElements = document.querySelectorAll(".gs-reveal")
-        revealElements.forEach(element => {
-          gsap.fromTo(element, 
+        // Project Grid Stagger
+        const projectElements = document.querySelectorAll(".gs-projects-reveal")
+        if (projectElements.length > 0) {
+          gsap.fromTo(projectElements,
             { y: 40, opacity: 0 },
             {
               y: 0,
               opacity: 1,
-              duration: 0.8,
-              ease: "power2.out",
+              duration: 1,
+              stagger: 0.1,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: "#work",
+                start: "top 75%",
+                toggleActions: "play none none reverse"
+              }
+            }
+          )
+        }
+
+        // Standard Scroll Reveal
+        const revealElements = document.querySelectorAll(".gs-reveal")
+        revealElements.forEach(element => {
+          gsap.fromTo(element, 
+            { y: 30, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1,
+              ease: "power3.out",
               scrollTrigger: {
                 trigger: element,
                 start: "top 85%",

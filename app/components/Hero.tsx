@@ -8,55 +8,45 @@ export default function Hero() {
       <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
         
         {/* Left: Typography */}
-        <div className="order-2 lg:order-1 gs-hero-reveal opacity-0">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-            <span className="text-[10px] font-medium text-zinc-400 uppercase tracking-wider">v2.0 System Online</span>
-          </div>
+        <div className="order-2 lg:order-1 gs-hero-reveal opacity-0 w-full pl-0 lg:pl-10">
 
-          <h1 className="font-display font-bold text-5xl sm:text-7xl lg:text-8xl leading-[0.9] tracking-tight mb-8 text-white">
-            FULL STACK<br />
-            <span className="text-zinc-600">DEVELOPER</span>
+
+          <h1 className="font-display font-bold text-6xl sm:text-7xl lg:text-9xl leading-[0.85] tracking-tighter mb-8 text-white uppercase">
+            Jon Marneil<br />
+            <span className="text-zinc-500">Cabahug</span>
           </h1>
 
-          <p className="text-zinc-400 text-sm leading-relaxed max-w-md mb-10">
-            I am <strong className="text-white">Jon Marneil Cabahug</strong>. I build scalable, high-performance web applications using <strong className="text-white">Next.js</strong>, <strong className="text-white">Angular</strong>, and <strong className="text-white">AWS</strong>. Focused on clean architecture and modern user experiences.
+          <div className="h-px w-32 bg-zinc-800 mb-8"></div>
+
+          <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-lg mb-10 font-mono mt-8">
+            Full-stack web developer crafting scalable, high-performance web applications. Focused on clean architecture and brutalist, high-impact user experiences.
           </p>
 
-          <div className="flex flex-wrap gap-4">
-            <a href="#work" className="px-6 py-3 bg-white text-black text-sm font-semibold rounded-lg hover:bg-zinc-200 transition-colors">
-              View Projects
+          <div className="flex flex-wrap gap-4 mt-8">
+            <a href="#work" className="px-8 py-4 bg-white text-black text-sm font-bold hover:bg-zinc-200 transition-colors uppercase tracking-widest border border-white">
+              View Work
             </a>
-            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-surface border border-border text-white text-sm font-semibold rounded-lg hover:bg-border transition-colors flex items-center gap-2">
-              <i className="fa-solid fa-file-pdf"></i> View Resume
+            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-transparent border border-zinc-800 text-white text-sm font-bold hover:bg-zinc-900 transition-colors uppercase tracking-widest flex items-center gap-3">
+              Resume <span className="font-mono text-zinc-500">↗</span>
             </a>
           </div>
         </div>
 
-        {/* Right: Big Picture Frame */}
-        <div className="order-1 lg:order-2 flex justify-center lg:justify-end gs-hero-reveal opacity-0">
-          <div className="relative w-full max-w-sm aspect-square bg-surface rounded-xl border border-border p-1">
-            {/* Corners */}
-            <div className="absolute top-3 left-3 w-2 h-2 border-t border-l border-blue-500/50"></div>
-            <div className="absolute top-3 right-3 w-2 h-2 border-t border-r border-blue-500/50"></div>
-            <div className="absolute bottom-3 left-3 w-2 h-2 border-b border-l border-blue-500/50"></div>
-            <div className="absolute bottom-3 right-3 w-2 h-2 border-b border-r border-blue-500/50"></div>
-
-            {/* Image */}
-            <div className="w-full h-full rounded-lg overflow-hidden bg-zinc-900 relative group">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
-              <Image 
-                src="/me.jpg" 
-                alt="Profile" 
-                fill
-                className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0"
-                priority
-              />
-              
-              <div className="absolute bottom-6 left-6 z-20">
-                <div className="text-xs text-zinc-500 uppercase tracking-widest mb-1">Mandaue City, PH</div>
-                <div className="text-white font-bold text-xl">JM Cabahug</div>
-              </div>
+        {/* Right: Picture Frame (Bento Card style) */}
+        <div className="order-1 lg:order-2 flex justify-center lg:justify-end gs-hero-reveal opacity-0 w-full p-0 lg:p-6">
+          <div className="w-full max-w-md xl:max-w-lg aspect-square bento-card relative overflow-hidden group border-0 lg:border">
+            <div className="absolute inset-0 bg-zinc-900/40 mix-blend-multiply z-10 transition-opacity duration-700 group-hover:opacity-0"></div>
+            <Image 
+              src="/me.jpg" 
+              alt="Profile" 
+              fill
+              className="object-cover object-top filter grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
+              priority
+            />
+            
+            <div className="absolute bottom-6 left-6 z-20 mix-blend-difference">
+              <div className="text-[10px] text-zinc-300 uppercase tracking-widest mb-1 font-mono">Location</div>
+              <div className="text-white font-bold text-xl uppercase tracking-tighter">Mandaue City, PH</div>
             </div>
           </div>
         </div>

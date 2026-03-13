@@ -15,13 +15,16 @@ const config: Config & { daisyui?: Record<string, unknown> } = {
         mono: ['var(--font-jetbrains-mono)', 'monospace'],
       },
       colors: {
-        background: '#050505',
-        surface: '#0f0f0f',
-        border: '#27272a',
-        primary: '#3b82f6',
+        background: '#000000',
+        surface: '#0a0a0a',
+        border: '#1f1f22',
+        primary: '#ffffff',
         secondary: '#a1a1aa',
+        accent: {
+          white: '#ffffff',
+        },
         term: {
-          green: '#00ff00',
+          white: '#ffffff',
         },
       },
     },
