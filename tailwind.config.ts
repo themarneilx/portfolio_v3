@@ -1,7 +1,6 @@
 import type { Config } from 'tailwindcss'
-import daisyui from 'daisyui'
 
-const config: Config & { daisyui?: Record<string, unknown> } = {
+const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -10,32 +9,32 @@ const config: Config & { daisyui?: Record<string, unknown> } = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'sans-serif'],
-        display: ['var(--font-space-grotesk)', 'sans-serif'],
+        sans: ['Satoshi', 'var(--font-dm-sans)', 'sans-serif'],
+        display: ['Cabinet Grotesk', 'var(--font-sora)', 'sans-serif'],
         mono: ['var(--font-jetbrains-mono)', 'monospace'],
       },
       colors: {
-        background: '#000000',
-        surface: '#0a0a0a',
-        border: '#1f1f22',
-        primary: '#ffffff',
-        secondary: '#a1a1aa',
+        background: '#0A0A0A',
+        surface: '#111111',
+        'surface-elevated': '#1A1A1A',
+        border: '#1F1F1F',
+        'border-hover': '#2A2A2A',
         accent: {
-          white: '#ffffff',
+          DEFAULT: '#D4AF37',
+          hover: '#C4A030',
+          muted: 'rgba(212, 175, 55, 0.08)',
+          glow: 'rgba(212, 175, 55, 0.12)',
         },
-        term: {
-          white: '#ffffff',
+        body: '#999999',
+        text: {
+          primary: '#FAFAFA',
+          secondary: '#777777',
+          muted: '#444444',
         },
       },
     },
   },
-  plugins: [
-    daisyui,
-  ],
-  daisyui: {
-    themes: ["light", "dark", "cupcake", "bumblebee", "emerald", "corporate", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee", "winter"],
-    darkTheme: "dark",
-  }
+  plugins: [],
 }
 
 export default config

@@ -1,19 +1,22 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
+import { Sora, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
 
-const inter = Inter({ 
+const sora = Sora({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-sora',
+  display: 'swap',
 })
-const spaceGrotesk = Space_Grotesk({ 
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  variable: '--font-dm-sans',
+  display: 'swap',
 })
-const jetbrainsMono = JetBrains_Mono({ 
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-jetbrains-mono',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -27,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} scroll-smooth`}>
-      <body className="bg-background text-gray-200 selection:bg-white selection:text-black">
+    <html lang="en" className={`${sora.variable} ${dmSans.variable} ${jetbrainsMono.variable} scroll-smooth`}>
+      <body className="bg-background text-body antialiased">
         {children}
         <Script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" strategy="lazyOnload" />
       </body>
