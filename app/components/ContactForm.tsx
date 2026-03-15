@@ -54,7 +54,7 @@ export default function ContactForm() {
                     </p>
 
                     <div className="space-y-3 mb-10">
-                        <a href="mailto:jmcabahug4@gmail.com" className="flex items-center gap-4 glass-card p-4 group hover:border-accent/20 transition-all">
+                        <a href="mailto:joncabs100@gmail.com" className="flex items-center gap-4 glass-card p-4 group hover:border-accent/20 transition-all">
                             <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-background transition-all duration-300">
                                 <i className="fa-solid fa-envelope text-sm"></i>
                             </div>
