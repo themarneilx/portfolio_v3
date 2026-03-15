@@ -58,7 +58,7 @@ export default function ContactForm() {
                             <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-background transition-all duration-300">
                                 <i className="fa-solid fa-envelope text-sm"></i>
                             </div>
-                            <span className="text-text-secondary text-sm group-hover:text-text-primary transition-colors font-medium">jmcabahug4@gmail.com</span>
+                            <span className="text-text-secondary text-sm group-hover:text-text-primary transition-colors font-medium">joncabs100@gmail.com</span>
                         </a>
 
                         <div className="flex items-center gap-4 glass-card p-4 group">
