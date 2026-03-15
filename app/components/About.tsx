@@ -2,20 +2,23 @@
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6 max-w-6xl mx-auto">
-      <div className="flex items-center gap-6 mb-16 gs-reveal opacity-0">
-        <h2 className="text-white font-display font-bold text-4xl uppercase tracking-tighter">About</h2>
-        <div className="h-px bg-zinc-800 flex-1"></div>
+    <section id="about" className="py-28 px-6 lg:px-10 max-w-7xl mx-auto relative">
+      {/* Section Header */}
+      <div className="relative mb-20 gs-reveal opacity-0">
+        <span className="section-number">01</span>
+        <div className="relative z-10">
+          <div className="section-label mb-3">// About Me</div>
+          <h2 className="gs-scramble text-text-primary font-display font-extrabold text-3xl md:text-4xl tracking-tight">Background</h2>
+        </div>
+        <div className="accent-line w-32 mt-4" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-min">
-        
-        {/* About Me Card (Spans 2 columns) */}
-        <div className="bento-card p-10 md:col-span-2 gs-reveal opacity-0 flex flex-col justify-center">
-          <h3 className="text-white font-display font-bold text-2xl uppercase tracking-tight mb-6">Background</h3>
-          <div className="text-zinc-400 text-sm md:text-base leading-relaxed space-y-6 font-mono">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {/* Background Card */}
+        <div className="glass-card p-8 md:p-10 md:col-span-2 gs-reveal opacity-0">
+          <div className="text-body text-[0.9375rem] leading-[1.85] space-y-5">
             <p>
-              As an IT undergraduate at <strong className="text-white">Benedicto College</strong>, I&apos;ve developed a strong foundation in computer science principles and practical application development. My journey in technology has equipped me with diverse skills across multiple programming languages and frameworks.
+              As an IT undergraduate at <strong className="text-text-primary font-semibold">Benedicto College</strong>, I&apos;ve developed a strong foundation in computer science principles and practical application development. My journey in technology has equipped me with diverse skills across multiple programming languages and frameworks.
             </p>
             <p>
               I&apos;m passionate about creating efficient, scalable solutions and have hands-on experience with system administration, server deployment, and computer troubleshooting across multiple operating systems.
@@ -24,95 +27,98 @@ export default function About() {
         </div>
 
         {/* Education Card */}
-        <div className="bento-card p-10 gs-reveal opacity-0 flex flex-col justify-between">
-          <h3 className="text-white font-display font-bold text-xl flex items-center gap-3 uppercase tracking-tight mb-8 border-b border-zinc-800 pb-4">
-            <i className="fa-solid fa-graduation-cap text-zinc-500"></i> Education
+        <div className="glass-card p-8 md:p-10 gs-reveal opacity-0">
+          <h3 className="text-text-primary font-display font-bold text-lg flex items-center gap-3 tracking-tight mb-6 pb-4 border-b border-border">
+            <span className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
+              <i className="fa-solid fa-graduation-cap text-accent text-xs"></i>
+            </span>
+            Education
           </h3>
-          <div className="space-y-6">
-            <div className="flex flex-col gap-1">
-              <span className="text-white font-bold text-sm">BS Information Technology</span>
-              <span className="text-xs text-zinc-500 font-mono">2022 - Present | Benedicto College</span>
-            </div>
-            <div className="flex flex-col gap-1">
-              <span className="text-zinc-400 font-bold text-sm">Senior High School</span>
-              <span className="text-xs text-zinc-500 font-mono">2021 - 2022 | Benedicto College</span>
-            </div>
-            <div className="flex flex-col gap-1">
-              <span className="text-zinc-400 font-bold text-sm">Senior High School</span>
-              <span className="text-xs text-zinc-500 font-mono">2017 - 2018 | Benedicto College</span>
-            </div>
-            <div className="flex flex-col gap-1">
-              <span className="text-zinc-400 font-bold text-sm">Junior High School</span>
-              <span className="text-xs text-zinc-500 font-mono">2013 - 2017 | St. Louis College-Cebu</span>
-            </div>
+          <div className="space-y-5">
+            {[
+              { degree: 'BS Information Technology', period: '2022 - Present', school: 'Benedicto College', active: true },
+              { degree: 'Senior High School', period: '2021 - 2022', school: 'Benedicto College', active: false },
+              { degree: 'Senior High School', period: '2017 - 2018', school: 'Benedicto College', active: false },
+              { degree: 'Junior High School', period: '2013 - 2017', school: 'St. Louis College-Cebu', active: false },
+            ].map((edu, i) => (
+              <div key={i} className="flex flex-col gap-0.5 group">
+                <span className={`font-semibold text-sm transition-colors ${edu.active ? 'text-text-primary' : 'text-text-secondary group-hover:text-text-primary'}`}>
+                  {edu.degree}
+                  {edu.active && <span className="ml-2 text-[9px] font-mono text-accent bg-accent/10 px-1.5 py-0.5 rounded">Current</span>}
+                </span>
+                <span className="text-[11px] text-text-muted font-mono">{edu.period} &middot; {edu.school}</span>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Technical Stack / Skill Cards (Spanning across grid) */}
-        <div className="bento-card p-10 md:col-span-3 gs-reveal opacity-0 mt-6 border-t border-zinc-800 pt-16">
-          <h3 className="text-white font-display font-bold text-2xl uppercase tracking-tight mb-10">Technical Stack</h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-[10px] font-mono px-2 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded font-bold">01</span>
-                <span className="text-zinc-200 font-bold uppercase tracking-widest text-sm">Web Development</span>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <span className="tech-badge"><i className="fa-brands fa-js"></i> Next.js</span>
-                <span className="tech-badge"><i className="fa-brands fa-react"></i> React</span>
-                <span className="tech-badge"><i className="fa-brands fa-angular"></i> Angular</span>
-                <span className="tech-badge"><i className="fa-solid fa-wind"></i> Tailwind CSS</span>
-                <span className="tech-badge"><i className="fa-brands fa-js-square"></i> TypeScript</span>
-                <span className="tech-badge"><i className="fa-brands fa-js"></i> JavaScript</span>
-                <span className="tech-badge"><i className="fa-solid fa-leaf"></i> DaisyUI</span>
-                <span className="tech-badge"><i className="fa-solid fa-film"></i> GSAP</span>
-              </div>
-            </div>
+        {/* Technical Stack */}
+        <div className="glass-card p-8 md:p-10 md:col-span-3 gs-reveal opacity-0">
+          <h3 className="gs-scramble text-text-primary font-display font-bold text-xl tracking-tight mb-10">Technical Stack</h3>
 
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-[10px] font-mono px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded font-bold">02</span>
-                <span className="text-zinc-200 font-bold uppercase tracking-widest text-sm">Backend & Systems</span>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <span className="tech-badge"><i className="fa-brands fa-node"></i> Node.js</span>
-                <span className="tech-badge"><i className="fa-brands fa-node-js"></i> Express.js</span>
-                <span className="tech-badge"><i className="fa-brands fa-aws"></i> AWS</span>
-                <span className="tech-badge"><i className="fa-brands fa-docker"></i> Docker</span>
-                <span className="tech-badge"><i className="fa-solid fa-server"></i> Nginx</span>
-                <span className="tech-badge"><i className="fa-brands fa-linux"></i> Linux</span>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <SkillGroup number="01" color="gold" label="Web Development" skills={[
+              { icon: "fa-brands fa-js", name: "Next.js" },
+              { icon: "fa-brands fa-react", name: "React" },
+              { icon: "fa-brands fa-angular", name: "Angular" },
+              { icon: "fa-solid fa-wind", name: "Tailwind CSS" },
+              { icon: "fa-brands fa-js-square", name: "TypeScript" },
+              { icon: "fa-brands fa-js", name: "JavaScript" },
+              { icon: "fa-solid fa-leaf", name: "DaisyUI" },
+              { icon: "fa-solid fa-film", name: "GSAP" },
+            ]} />
 
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-[10px] font-mono px-2 py-1 bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded font-bold">03</span>
-                <span className="text-zinc-200 font-bold uppercase tracking-widest text-sm">Database</span>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <span className="tech-badge"><i className="fa-solid fa-database"></i> PostgreSQL</span>
-                <span className="tech-badge"><i className="fa-solid fa-database"></i> MySQL</span>
-                <span className="tech-badge"><i className="fa-solid fa-fire-flame-curved"></i> Firebase</span>
-              </div>
-            </div>
+            <SkillGroup number="02" color="gold" label="Backend & Systems" skills={[
+              { icon: "fa-brands fa-node", name: "Node.js" },
+              { icon: "fa-brands fa-node-js", name: "Express.js" },
+              { icon: "fa-brands fa-aws", name: "AWS" },
+              { icon: "fa-brands fa-docker", name: "Docker" },
+              { icon: "fa-solid fa-server", name: "Nginx" },
+              { icon: "fa-brands fa-linux", name: "Linux" },
+            ]} />
 
-            <div className="md:col-span-2 lg:col-span-3 lg:w-2/3 mt-6 border-t border-zinc-800/50 pt-8">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-[10px] font-mono px-2 py-1 bg-rose-500/10 text-rose-400 border border-rose-500/20 rounded font-bold">04</span>
-                <span className="text-zinc-200 font-bold uppercase tracking-widest text-sm">Foundations, Tools, & OS</span>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <span className="tech-badge"><i className="fa-solid fa-code"></i> C++ / C# / C / Java</span>
-                <span className="tech-badge"><i className="fa-brands fa-git-alt"></i> Git / GitHub</span>
-                <span className="tech-badge"><i className="fa-solid fa-cube"></i> OOP / DSA</span>
-                <span className="tech-badge"><i className="fa-brands fa-windows"></i> Windows / macOS / Linux</span>
-              </div>
+            <SkillGroup number="03" color="gold" label="Database" skills={[
+              { icon: "fa-solid fa-database", name: "PostgreSQL" },
+              { icon: "fa-solid fa-database", name: "MySQL" },
+              { icon: "fa-solid fa-fire-flame-curved", name: "Firebase" },
+            ]} />
+
+            <div className="md:col-span-2 lg:col-span-3 lg:w-2/3 pt-8 border-t border-border">
+              <SkillGroup number="04" color="gold" label="Foundations, Tools & OS" skills={[
+                { icon: "fa-solid fa-code", name: "C++ / C# / C / Java" },
+                { icon: "fa-brands fa-git-alt", name: "Git / GitHub" },
+                { icon: "fa-solid fa-cube", name: "OOP / DSA" },
+                { icon: "fa-brands fa-windows", name: "Windows / macOS / Linux" },
+              ]} />
             </div>
           </div>
         </div>
-
       </div>
     </section>
+  )
+}
+
+function SkillGroup({ number, color, label, skills }: {
+  number: string
+  color: string
+  label: string
+  skills: { icon: string; name: string }[]
+}) {
+  const colorMap: Record<string, string> = {
+    gold: 'bg-[rgba(212,175,55,0.1)] text-[#D4AF37] border-[rgba(212,175,55,0.2)]',
+  }
+
+  return (
+    <div>
+      <div className="flex items-center gap-3 mb-5">
+        <span className={`text-[10px] font-mono px-2 py-0.5 border rounded font-bold ${colorMap[color]}`}>{number}</span>
+        <span className="text-text-secondary font-bold uppercase tracking-widest text-xs">{label}</span>
+      </div>
+      <div className="flex flex-wrap gap-2.5">
+        {skills.map((s, i) => (
+          <span key={i} className="tech-badge"><i className={s.icon}></i> {s.name}</span>
+        ))}
+      </div>
+    </div>
   )
 }

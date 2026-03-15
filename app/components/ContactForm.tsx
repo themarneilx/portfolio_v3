@@ -12,7 +12,7 @@ export default function ContactForm() {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsPending(true);
-        
+
         const formData = new FormData(e.currentTarget);
         const result = await sendEmail(formData);
 
@@ -27,157 +27,140 @@ export default function ContactForm() {
 
         setShowToast(true);
         setIsPending(false);
-        setTimeout(() => {
-            setShowToast(false);
-        }, 3000);
+        setTimeout(() => setShowToast(false), 3000);
     };
 
     return (
-        <section id="contact" className="py-24 px-6 max-w-6xl mx-auto border-t border-zinc-900 pb-32">
-      <div className="flex items-center gap-6 mb-16 gs-reveal opacity-0">
-        <h2 className="text-white font-display font-bold text-4xl uppercase tracking-tighter">Contact</h2>
-        <div className="h-px bg-zinc-800 flex-1"></div>
-      </div>
-
-      <div className="grid lg:grid-cols-2 gap-16">
-        
-        {/* Left: Info */}
-        <div className="gs-reveal opacity-0 w-full xl:w-[90%] flex flex-col justify-center">
-          <h3 className="text-white font-display font-bold text-5xl sm:text-7xl uppercase tracking-tighter leading-[0.9] mb-8">
-            Let&apos;s <br/><span className="text-zinc-500">Talk</span>
-          </h3>
-          <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-10 font-mono">
-            Currently open for new opportunities. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
-          </p>
-
-          <div className="space-y-4 mb-12 font-mono">
-            <div className="flex items-center gap-4 bento-card p-4 group">
-              <div className="w-10 h-10 rounded border border-zinc-800 bg-zinc-950 flex items-center justify-center text-zinc-500 group-hover:text-white transition-colors">
-                <i className="fa-solid fa-envelope"></i>
-              </div>
-              <span className="text-zinc-300 text-sm group-hover:text-white transition-colors font-bold tracking-tight">jmcabahug4@gmail.com</span>
-            </div>
-            
-            <div className="flex items-center gap-4 bento-card p-4 group">
-              <div className="w-10 h-10 rounded border border-zinc-800 bg-zinc-950 flex items-center justify-center text-zinc-500 group-hover:text-white transition-colors">
-                <i className="fa-solid fa-location-dot"></i>
-              </div>
-              <span className="text-zinc-300 text-sm group-hover:text-white transition-colors font-bold tracking-tight">Mandaue City, Cebu, Philippines</span>
-            </div>
-          </div>
-
-          <div className="flex gap-4">
-            <a href="https://github.com/themarneilx" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="GitHub">
-              <i className="fa-brands fa-github text-xl"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/jonmarneil/" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="LinkedIn">
-              <i className="fa-brands fa-linkedin-in text-xl"></i>
-            </a>
-            <a href="#" className="social-btn" aria-label="Twitter">
-              <i className="fa-brands fa-twitter text-xl"></i>
-            </a>
-            <a href="#" className="social-btn" aria-label="Instagram">
-              <i className="fa-brands fa-instagram text-xl"></i>
-            </a>
-          </div>
-        </div>
-
-        {/* Right: Form */}
-        <div className="gs-reveal opacity-0 w-full xl:w-[90%] ml-auto bento-card p-8 lg:p-12 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(-45deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-          
-          <form id="contact-form" onSubmit={handleSubmit} className="relative z-10 flex flex-col justify-between h-full space-y-6">
-            <div className="space-y-4">
-              <div className="space-y-1">
-                <label htmlFor="name" className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">Name</label>
-                <input 
-                  type="text" 
-                  id="name"
-                  name="name" 
-                  placeholder="John Doe" 
-                  required
-                  disabled={isPending}
-                  className="minimal-input"
-                />
-              </div>
-              <div className="space-y-1">
-                <label htmlFor="email" className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">Email</label>
-                <input 
-                  type="email" 
-                  id="email"
-                  name="email" 
-                  placeholder="john@example.com" 
-                  required
-                  disabled={isPending}
-                  className="minimal-input"
-                />
-              </div>
-
-              <div className="space-y-1">
-                <label htmlFor="subject" className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">Subject</label>
-                <input 
-                  type="text" 
-                  id="subject"
-                  name="subject" 
-                  placeholder="Project Inquiry" 
-                  required
-                  disabled={isPending}
-                  className="minimal-input"
-                />
-              </div>
-
-              <div className="space-y-1">
-                <label htmlFor="message" className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold ml-1">Message</label>
-                <textarea 
-                  id="message"
-                  name="message" 
-                  rows={4} 
-                  placeholder="Tell me about your project..." 
-                  required
-                  disabled={isPending}
-                  className="minimal-input resize-none"
-                ></textarea>
-              </div>
+        <section id="contact" className="py-28 px-6 lg:px-10 max-w-7xl mx-auto relative pb-16">
+            {/* Section Header */}
+            <div className="relative mb-20 gs-reveal opacity-0">
+                <span className="section-number">03</span>
+                <div className="relative z-10">
+                    <div className="section-label mb-3">// Get in Touch</div>
+                    <h2 className="gs-scramble text-text-primary font-display font-extrabold text-3xl md:text-4xl tracking-tight">Contact</h2>
+                </div>
+                <div className="accent-line w-32 mt-4" />
             </div>
 
-            <button 
-              type="submit" 
-              disabled={isPending} 
-              className="w-full py-3.5 bg-white text-zinc-950 font-bold tracking-wide rounded-lg transition-all hover:bg-zinc-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center transform hover:-translate-y-1"
-            >
-              {isPending ? (
-                <>
-                  <span className="w-4 h-4 border-2 border-zinc-400 border-t-zinc-950 rounded-full animate-spin mr-2"></span>
-                  Sending...
-                </>
-              ) : 'Send Message'}
-            </button>
-          </form>
-        </div>
-      </div>
+            <div className="grid lg:grid-cols-2 gap-16">
+                {/* Left: Info */}
+                <div className="gs-reveal opacity-0 flex flex-col justify-center">
+                    <h3 className="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl tracking-[-0.04em] leading-[0.88] mb-8">
+                        <span className="text-text-primary block">Let&apos;s</span>
+                        <span className="text-accent block">Talk<span className="text-accent/40">.</span></span>
+                    </h3>
+                    <p className="text-body text-[0.9375rem] leading-relaxed mb-10 max-w-md">
+                        Currently open for new opportunities. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
+                    </p>
 
-      {showToast && (
-          <div className="fixed bottom-8 right-8 z-[100] animate-fade-in">
-            <div className={`bento-card px-6 py-4 flex items-center gap-4 ${
-              toastType === 'success' 
-                ? 'border-white text-white' 
-                : 'border-red-500 text-red-500'
-            }`}>
-              <i className={`fa-solid text-xl ${
-                toastType === 'success' 
-                  ? 'fa-circle-check' 
-                  : 'fa-circle-exclamation'
-              }`}></i>
-              <div>
-                <p className="font-bold text-sm tracking-tight">{toastType === 'success' ? 'Success' : 'Error'}</p>
-                <p className="text-sm opacity-90">{toastMessage}</p>
-              </div>
+                    <div className="space-y-3 mb-10">
+                        <a href="mailto:jmcabahug4@gmail.com" className="flex items-center gap-4 glass-card p-4 group hover:border-accent/20 transition-all">
+                            <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-background transition-all duration-300">
+                                <i className="fa-solid fa-envelope text-sm"></i>
+                            </div>
+                            <span className="text-text-secondary text-sm group-hover:text-text-primary transition-colors font-medium">jmcabahug4@gmail.com</span>
+                        </a>
+
+                        <div className="flex items-center gap-4 glass-card p-4 group">
+                            <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+                                <i className="fa-solid fa-location-dot text-sm"></i>
+                            </div>
+                            <span className="text-text-secondary text-sm group-hover:text-text-primary transition-colors font-medium">Mandaue City, Cebu, Philippines</span>
+                        </div>
+                    </div>
+
+                    <div className="flex gap-3">
+                        {[
+                            { href: "https://github.com/themarneilx", icon: "fa-brands fa-github", label: "GitHub" },
+                            { href: "https://www.linkedin.com/in/jonmarneil/", icon: "fa-brands fa-linkedin-in", label: "LinkedIn" },
+                            { href: "#", icon: "fa-brands fa-twitter", label: "Twitter" },
+                            { href: "#", icon: "fa-brands fa-instagram", label: "Instagram" },
+                        ].map((social, i) => (
+                            <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="social-btn" aria-label={social.label}>
+                                <i className={`${social.icon} text-lg`}></i>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Right: Form */}
+                <div className="gs-reveal opacity-0 glass-card p-8 lg:p-10 relative overflow-hidden">
+                    <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
+
+                    <form id="contact-form" onSubmit={handleSubmit} className="relative z-10 flex flex-col justify-between h-full space-y-5">
+                        <div className="space-y-4">
+                            {[
+                                { id: 'name', label: 'Name', type: 'text', placeholder: 'John Doe' },
+                                { id: 'email', label: 'Email', type: 'email', placeholder: 'john@example.com' },
+                                { id: 'subject', label: 'Subject', type: 'text', placeholder: 'Project Inquiry' },
+                            ].map((field) => (
+                                <div key={field.id} className="space-y-1.5">
+                                    <label htmlFor={field.id} className="text-[10px] font-mono uppercase tracking-[0.2em] text-text-muted font-semibold">{field.label}</label>
+                                    <input
+                                        type={field.type}
+                                        id={field.id}
+                                        name={field.id}
+                                        placeholder={field.placeholder}
+                                        required
+                                        disabled={isPending}
+                                        className="form-input"
+                                    />
+                                </div>
+                            ))}
+                            <div className="space-y-1.5">
+                                <label htmlFor="message" className="text-[10px] font-mono uppercase tracking-[0.2em] text-text-muted font-semibold">Message</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows={4}
+                                    placeholder="Tell me about your project..."
+                                    required
+                                    disabled={isPending}
+                                    className="form-input resize-none"
+                                ></textarea>
+                            </div>
+                        </div>
+
+                        <button
+                            type="submit"
+                            disabled={isPending}
+                            className="w-full py-3.5 bg-accent text-background font-bold tracking-wide rounded-lg transition-all duration-300 hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/15 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center group"
+                        >
+                            {isPending ? (
+                                <>
+                                    <span className="w-4 h-4 border-2 border-background/40 border-t-background rounded-full animate-spin mr-2"></span>
+                                    Sending...
+                                </>
+                            ) : (
+                                <>
+                                    Send Message
+                                    <svg className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                                </>
+                            )}
+                        </button>
+                    </form>
+                </div>
             </div>
-          </div>
-        )}
-            
-            <div className="mt-20 border-t border-zinc-900 pt-8 text-center text-[10px] text-zinc-600">
-                © 2025 Jon Marneil Cabahug
+
+            {/* Toast */}
+            {showToast && (
+                <div className="fixed bottom-8 right-8 z-[100]">
+                    <div className={`glass-card px-6 py-4 flex items-center gap-4 ${
+                        toastType === 'success' ? 'border-accent/50 text-accent' : 'border-red-500/50 text-red-400'
+                    }`}>
+                        <i className={`fa-solid text-xl ${toastType === 'success' ? 'fa-circle-check' : 'fa-circle-exclamation'}`}></i>
+                        <div>
+                            <p className="font-bold text-sm">{toastType === 'success' ? 'Success' : 'Error'}</p>
+                            <p className="text-sm opacity-80">{toastMessage}</p>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Footer */}
+            <div className="mt-24 border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <span className="text-[11px] text-text-muted font-mono">&copy; 2025 Jon Marneil Cabahug</span>
+                <span className="text-[11px] text-text-muted font-mono">Built with Next.js &middot; Tailwind &middot; GSAP</span>
             </div>
         </section>
     );

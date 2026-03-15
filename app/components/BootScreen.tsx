@@ -34,44 +34,44 @@ export default function BootScreen({ onComplete }: { onComplete: () => void }) {
     bootLogs.forEach((log) => {
       const timeout = setTimeout(() => {
         setLogs(prev => [...prev, log.text])
-        if (bootScreenRef.current) {
-            bootScreenRef.current.scrollTop = bootScreenRef.current.scrollHeight
-        }
       }, log.delay)
       timeouts.push(timeout)
       totalDelay = Math.max(totalDelay, log.delay)
     })
 
-    const completionTimeout = setTimeout(() => {
-      onComplete()
-    }, totalDelay + 500)
+    const completionTimeout = setTimeout(() => onComplete(), totalDelay + 500)
     timeouts.push(completionTimeout)
 
-    return () => {
-      timeouts.forEach(clearTimeout)
-    }
+    return () => { timeouts.forEach(clearTimeout) }
   }, [onComplete])
 
   useEffect(() => {
     if (bootScreenRef.current) {
-        bootScreenRef.current.scrollTop = bootScreenRef.current.scrollHeight
+      bootScreenRef.current.scrollTop = bootScreenRef.current.scrollHeight
     }
   }, [logs])
 
   return (
-    <div 
+    <div
       ref={bootScreenRef}
-      className="fixed inset-0 p-4 md:p-8 flex flex-col justify-end text-xs md:text-sm leading-tight font-mono bg-black z-[9999] overflow-auto h-screen"
+      className="fixed inset-0 p-6 md:p-10 flex flex-col justify-end text-xs md:text-sm leading-tight font-mono z-[9999] overflow-auto h-screen"
+      style={{ backgroundColor: '#0A0A0A' }}
     >
-      <div className="text-gray-400 space-y-0.5 mb-2">
+      <div className="fixed inset-0 pointer-events-none z-[10000] opacity-[0.012]"
+        style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(212,175,55,0.2) 2px, rgba(212,175,55,0.2) 4px)' }}
+      />
+      <div className="space-y-1 mb-3 relative z-10">
         {logs.map((log, index) => (
-          <div key={index} dangerouslySetInnerHTML={{ 
-            __html: log.replace("[ OK ]", '[ <span class="text-term-white font-bold">OK</span> ]') 
-          }} />
+          <div key={index} className="text-text-secondary"
+            dangerouslySetInnerHTML={{
+              __html: log.replace("[ OK ]", '[ <span class="text-accent font-bold">OK</span> ]')
+            }}
+          />
         ))}
       </div>
-      <div className="text-term-white mt-2">
-        <span className="text-zinc-500">root@sys:~#</span> <span className="cursor-block bg-term-white"></span>
+      <div className="mt-2 relative z-10 flex items-center gap-1">
+        <span className="text-text-muted">root@sys:~#</span>
+        <span className="cursor-block"></span>
       </div>
     </div>
   )
