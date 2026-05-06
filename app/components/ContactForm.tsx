@@ -36,7 +36,7 @@ export default function ContactForm() {
             <div className="relative mb-20 gs-reveal opacity-0">
                 <span className="section-number">03</span>
                 <div className="relative z-10">
-                    <div className="section-label mb-3">// Get in Touch</div>
+                    <div className="section-label mb-3">{ "// Get in Touch" }</div>
                     <h2 className="gs-scramble text-text-primary font-display font-extrabold text-3xl md:text-4xl tracking-tight">Contact</h2>
                 </div>
                 <div className="accent-line w-32 mt-4" />

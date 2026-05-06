@@ -160,7 +160,7 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-28 pb-16 relative gs-reveal opacity-0">
         <span className="section-number">02</span>
         <div className="relative z-10">
-          <div className="section-label mb-3">// Selected Work</div>
+          <div className="section-label mb-3">{ "// Selected Work" }</div>
           <h2 className="gs-scramble text-text-primary font-display font-extrabold text-3xl md:text-4xl tracking-tight">Projects</h2>
         </div>
         <div className="accent-line w-32 mt-4" />

@@ -38,7 +38,7 @@ export default function Typewriter() {
       
       <div className="typewriter-container">
         <h1 className="typewriter-text text-4xl font-bold">
-          Hello, I&apos;m Jon Marneil Cabahug, an IT Student.
+          Hello, I&apos;m Jon Marneil Cabahug, an IT Graduate.
         </h1>
         <span className="cursor text-4xl">|</span>
       </div>

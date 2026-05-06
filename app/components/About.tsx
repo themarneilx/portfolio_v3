@@ -7,7 +7,7 @@ export default function About() {
       <div className="relative mb-20 gs-reveal opacity-0">
         <span className="section-number">01</span>
         <div className="relative z-10">
-          <div className="section-label mb-3">// About Me</div>
+          <div className="section-label mb-3">{ "// About Me" }</div>
           <h2 className="gs-scramble text-text-primary font-display font-extrabold text-3xl md:text-4xl tracking-tight">Background</h2>
         </div>
         <div className="accent-line w-32 mt-4" />
@@ -18,7 +18,7 @@ export default function About() {
         <div className="glass-card p-8 md:p-10 md:col-span-2 gs-reveal opacity-0">
           <div className="text-body text-[0.9375rem] leading-[1.85] space-y-5">
             <p>
-              As an IT undergraduate at <strong className="text-text-primary font-semibold">Benedicto College</strong>, I&apos;ve developed a strong foundation in computer science principles and practical application development. My journey in technology has equipped me with diverse skills across multiple programming languages and frameworks.
+              As an IT graduate at <strong className="text-text-primary font-semibold">Benedicto College</strong>, I&apos;ve developed a strong foundation in computer science principles and practical application development. My journey in technology has equipped me with diverse skills across multiple programming languages and frameworks.
             </p>
             <p>
               I&apos;m passionate about creating efficient, scalable solutions and have hands-on experience with system administration, server deployment, and computer troubleshooting across multiple operating systems.
@@ -36,7 +36,7 @@ export default function About() {
           </h3>
           <div className="space-y-5">
             {[
-              { degree: 'BS Information Technology', period: '2022 - Present', school: 'Benedicto College', active: true },
+              { degree: 'BS Information Technology', period: '2022 - 2026', school: 'Benedicto College', active: false },
               { degree: 'Senior High School', period: '2021 - 2022', school: 'Benedicto College', active: false },
               { degree: 'Senior High School', period: '2017 - 2018', school: 'Benedicto College', active: false },
               { degree: 'Junior High School', period: '2013 - 2017', school: 'St. Louis College-Cebu', active: false },
