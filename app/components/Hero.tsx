@@ -75,6 +75,7 @@ export default function Hero() {
                 src="/me.jpg"
                 alt="Jon Marneil Cabahug"
                 fill
+                sizes="(min-width: 1280px) 28rem, (min-width: 1024px) 24rem, min(100vw - 3rem, 24rem)"
                 className="object-cover object-top filter grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-[1.03]"
                 priority
               />

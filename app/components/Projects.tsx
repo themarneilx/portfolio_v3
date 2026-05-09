@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { gsap, ScrollTrigger } from '@/app/lib/gsap'
 
@@ -59,44 +59,7 @@ export default function Projects() {
   const dotsRef = useRef<HTMLDivElement>(null)
   const imagesRef = useRef<(HTMLDivElement | null)[]>(new Array(projects.length).fill(null))
 
-  useEffect(() => {
-    const triggers: ScrollTrigger[] = []
-
-    imagesRef.current.forEach((img, i) => {
-      if (!img) return
-
-      const st = ScrollTrigger.create({
-        trigger: img,
-        start: "top center",
-        end: "bottom center",
-        onEnter: () => swapContent(i),
-        onEnterBack: () => swapContent(i),
-      })
-      triggers.push(st)
-
-      // Subtle parallax scale on each image
-      gsap.fromTo(img.querySelector('.project-img-inner'),
-        { scale: 1.08 },
-        {
-          scale: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: img,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1.2,
-          },
-        }
-      )
-    })
-
-    return () => {
-      triggers.forEach(t => t.kill())
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  const swapContent = (index: number) => {
+  const swapContent = useCallback((index: number) => {
     if (currentRef.current === index) return
     currentRef.current = index
 
@@ -150,7 +113,43 @@ export default function Projects() {
         )
       },
     })
-  }
+  }, [])
+
+  useEffect(() => {
+    const triggers: ScrollTrigger[] = []
+
+    imagesRef.current.forEach((img, i) => {
+      if (!img) return
+
+      const st = ScrollTrigger.create({
+        trigger: img,
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => swapContent(i),
+        onEnterBack: () => swapContent(i),
+      })
+      triggers.push(st)
+
+      // Subtle parallax scale on each image
+      gsap.fromTo(img.querySelector('.project-img-inner'),
+        { scale: 1.08 },
+        {
+          scale: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: img,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.2,
+          },
+        }
+      )
+    })
+
+    return () => {
+      triggers.forEach(t => t.kill())
+    }
+  }, [swapContent])
 
   const first = projects[0]
 
@@ -213,6 +212,7 @@ export default function Projects() {
                   src={project.image}
                   alt={project.title}
                   fill
+                  sizes={project.phone ? '(min-width: 1024px) 25vw, 67vw' : '(min-width: 1024px) 50vw, 100vw'}
                   className={`project-img-inner ${project.phone ? 'object-contain' : 'object-cover'}`}
                 />
                 {/* Hover shimmer */}
@@ -232,6 +232,7 @@ export default function Projects() {
                 src={project.image}
                 alt={project.title}
                 fill
+                sizes={project.phone ? '67vw' : '100vw'}
                 className={project.phone ? 'object-contain' : 'object-cover'}
               />
             </div>

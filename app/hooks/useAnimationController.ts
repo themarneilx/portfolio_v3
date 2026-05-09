@@ -13,6 +13,31 @@ export function useAnimationController(bootState: 'booting' | 'fading' | 'comple
   useEffect(() => {
     if (bootState !== 'complete') return
 
+    const revealHeroFallback = () => {
+      const heroTitle = document.querySelector<HTMLElement>('.gs-hero-title')
+      const firstReveal = document.querySelector<HTMLElement>('.gs-hero-reveal')
+      const firstSplitChar = heroTitle?.querySelector<HTMLElement>('[style*="rotateX"]')
+
+      const titleReady = !heroTitle || Number(getComputedStyle(heroTitle).opacity) > 0.95
+      const revealReady = !firstReveal || Number(getComputedStyle(firstReveal).opacity) > 0.95
+      const splitReady = !firstSplitChar || Number(getComputedStyle(firstSplitChar).opacity) > 0.95
+
+      if (titleReady && revealReady && splitReady) return
+
+      document.querySelectorAll<HTMLElement>('.gs-hero-title, .gs-hero-title *').forEach((el) => {
+        el.style.opacity = '1'
+        el.style.removeProperty('transform')
+        el.style.removeProperty('filter')
+      })
+
+      document.querySelectorAll<HTMLElement>('.gs-hero-reveal').forEach((el) => {
+        el.style.opacity = '1'
+        el.style.removeProperty('filter')
+      })
+    }
+
+    const fallbackTimeout = window.setTimeout(revealHeroFallback, 2400)
+
     const timeout = setTimeout(() => {
       if (ctxRef.current) ctxRef.current.revert()
 
@@ -162,6 +187,7 @@ export function useAnimationController(bootState: 'booting' | 'fading' | 'comple
 
     return () => {
       clearTimeout(timeout)
+      clearTimeout(fallbackTimeout)
       if (ctxRef.current) ctxRef.current.revert()
     }
   }, [bootState])
