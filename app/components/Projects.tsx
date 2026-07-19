@@ -48,7 +48,16 @@ const projects = [
     desc: "Built for Innodata — An all-in-one digital clinic platform that streamlines patient records and automates medicine inventory.",
     tech: ["PostgreSQL", "Next.js", "Node.js", "API"],
   },
+  {
+    image: "/smash-court.png",
+    title: "Smash Court",
+    number: "07",
+    desc: "A pickleball court booking system with live court availability, date-based session scheduling, and booking tracking.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL"],
+  },
 ]
+
+const projectCount = String(projects.length).padStart(2, '0')
 
 export default function Projects() {
   const currentRef = useRef(0)
@@ -98,7 +107,7 @@ export default function Projects() {
       stagger: 0.03,
       ease: "power3.in",
       onComplete: () => {
-        if (numberRef.current) numberRef.current.textContent = `${project.number} / 06`
+        if (numberRef.current) numberRef.current.textContent = `${project.number} / ${projectCount}`
         if (titleRef.current) titleRef.current.textContent = project.title
         if (descRef.current) descRef.current.textContent = project.desc
         if (tagsRef.current) {
@@ -181,7 +190,7 @@ export default function Projects() {
             </div>
 
             <div className="pl-8">
-              <span ref={numberRef} className="section-label block mb-6">{first.number} / 06</span>
+              <span ref={numberRef} className="section-label block mb-6">{first.number} / {projectCount}</span>
               <h3 ref={titleRef} className="font-display font-extrabold text-4xl xl:text-5xl text-text-primary tracking-tight leading-[1.1] mb-6">
                 {first.title}
               </h3>
@@ -236,7 +245,7 @@ export default function Projects() {
                 className={project.phone ? 'object-contain' : 'object-cover'}
               />
             </div>
-            <span className="section-label block mb-3">{project.number} / 06</span>
+            <span className="section-label block mb-3">{project.number} / {projectCount}</span>
             <h3 className="font-display font-extrabold text-2xl text-text-primary tracking-tight mb-3">{project.title}</h3>
             <p className="text-body text-sm leading-relaxed mb-4">{project.desc}</p>
             <div className="flex flex-wrap">
