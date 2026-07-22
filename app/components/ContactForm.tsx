@@ -72,7 +72,7 @@ export default function ContactForm() {
                     <div className="flex gap-3">
                         {[
                             { href: "https://github.com/themarneilx", icon: "fa-brands fa-github", label: "GitHub" },
-                            { href: "https://www.linkedin.com/in/jonmarneil/", icon: "fa-brands fa-linkedin-in", label: "LinkedIn" },
+                            { href: "https://www.linkedin.com/in/jon-marneil-cabahug-754aab316/", icon: "fa-brands fa-linkedin-in", label: "LinkedIn" },
                             { href: "#", icon: "fa-brands fa-twitter", label: "Twitter" },
                             { href: "#", icon: "fa-brands fa-instagram", label: "Instagram" },
                         ].map((social, i) => (
