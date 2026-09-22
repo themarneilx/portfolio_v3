@@ -1,9 +1,9 @@
 'use client'
 
 const items = [
-  "Next.js", "React", "Angular", "TypeScript", "Node.js",
-  "PostgreSQL", "AWS", "Docker", "Tailwind CSS", "GSAP",
-  "Express.js", "Linux", "Firebase", "Nginx",
+  "Next.js", "TypeScript", "Python", "AWS", "Docker",
+  "Node.js", "PostgreSQL", "Angular", "Claude Code", "Gemini",
+  "Linux", "Proxmox VE", "Supabase", "Cloudflare", "Tailwind CSS", "GSAP",
 ]
 
 export default function Marquee() {

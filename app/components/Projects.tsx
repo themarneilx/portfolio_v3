@@ -23,7 +23,7 @@ const projects = [
     image: "/library.png",
     title: "Library System with AI",
     number: "03",
-    desc: "Academic Project — Smart cataloging system integrated with Generative AI for enhanced research capabilities.",
+    desc: "Academic Project : Smart cataloging system integrated with Generative AI for enhanced research capabilities.",
     tech: ["Angular", "Gen AI", "MariaDB"],
   },
   {
@@ -45,8 +45,8 @@ const projects = [
     image: "/innocare.jpg",
     title: "InnoCare",
     number: "06",
-    desc: "Built for Innodata — An all-in-one digital clinic platform that streamlines patient records and automates medicine inventory.",
-    tech: ["PostgreSQL", "Next.js", "Node.js", "API"],
+    desc: "Built for Innodata : An all-in-one digital clinic platform that streamlines patient records and automates medicine inventory.",
+    tech: ["Next.js", "Node.js", "PostgreSQL", "AWS"],
   },
   {
     image: "/smash-court.png",

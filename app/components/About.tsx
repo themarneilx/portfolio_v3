@@ -52,45 +52,149 @@ export default function About() {
           </div>
         </div>
 
+        {/* Awards & Certifications */}
+        <div className="glass-card p-8 md:p-10 md:col-span-3 gs-reveal opacity-0">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-border">
+            <h3 className="text-text-primary font-display font-bold text-xl flex items-center gap-3 tracking-tight">
+              <span className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
+                <i className="fa-solid fa-award text-accent text-sm"></i>
+              </span>
+              Awards &amp; Certifications
+            </h3>
+            <span className="text-[11px] font-mono text-text-muted">
+              AWS Training &amp; Academic Honors
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              {
+                title: "Foundations of Prompt Engineering",
+                issuer: "Amazon Web Services Training and Certification",
+                year: "2026",
+                icon: "fa-brands fa-aws",
+              },
+              {
+                title: "Planning a Generative AI Project",
+                issuer: "Amazon Web Services Training and Certification",
+                year: "2026",
+                icon: "fa-brands fa-aws",
+              },
+              {
+                title: "Introduction to Generative AI : Art of the Possible",
+                issuer: "Amazon Web Services Training and Certification",
+                year: "2026",
+                icon: "fa-brands fa-aws",
+              },
+              {
+                title: "Building a Generative AI-Ready Organization",
+                issuer: "Amazon Web Services Training and Certification",
+                year: "2026",
+                icon: "fa-brands fa-aws",
+              },
+              {
+                title: "Amazon Q Introduction",
+                issuer: "Amazon Web Services Training and Certification",
+                year: "2026",
+                icon: "fa-brands fa-aws",
+              },
+              {
+                title: "Dean's Lister",
+                issuer: "Benedicto College Academic Award",
+                year: "2023",
+                icon: "fa-solid fa-medal",
+              },
+            ].map((cert, i) => (
+              <div
+                key={i}
+                className="p-4 rounded-xl border border-border bg-surface/40 hover:border-accent/30 hover:bg-surface transition-all duration-300 flex flex-col justify-between group"
+              >
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
+                    <i className={`${cert.icon} text-accent text-sm`}></i>
+                  </div>
+                  <span className="text-[10px] font-mono px-2 py-0.5 border border-accent/20 rounded font-semibold bg-accent/5 text-accent">
+                    {cert.year}
+                  </span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm text-text-primary group-hover:text-accent transition-colors leading-snug mb-1.5">
+                    {cert.title}
+                  </h4>
+                  <p className="text-[11px] text-text-muted font-mono leading-relaxed">
+                    {cert.issuer}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Technical Stack */}
         <div className="glass-card p-8 md:p-10 md:col-span-3 gs-reveal opacity-0">
           <h3 className="gs-scramble text-text-primary font-display font-bold text-xl tracking-tight mb-10">Technical Stack</h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <SkillGroup number="01" color="gold" label="Web Development" skills={[
               { icon: "fa-brands fa-js", name: "Next.js" },
               { icon: "fa-brands fa-react", name: "React" },
               { icon: "fa-brands fa-angular", name: "Angular" },
-              { icon: "fa-solid fa-wind", name: "Tailwind CSS" },
               { icon: "fa-brands fa-js-square", name: "TypeScript" },
               { icon: "fa-brands fa-js", name: "JavaScript" },
+              { icon: "fa-brands fa-wordpress", name: "WordPress" },
+              { icon: "fa-brands fa-php", name: "PHP" },
+              { icon: "fa-solid fa-wind", name: "Tailwind CSS" },
               { icon: "fa-solid fa-leaf", name: "DaisyUI" },
               { icon: "fa-solid fa-film", name: "GSAP" },
             ]} />
 
-            <SkillGroup number="02" color="gold" label="Backend & Systems" skills={[
+            <SkillGroup number="02" color="gold" label="Backend & AI" skills={[
               { icon: "fa-brands fa-node", name: "Node.js" },
               { icon: "fa-brands fa-node-js", name: "Express.js" },
+              { icon: "fa-brands fa-python", name: "Python" },
+              { icon: "fa-brands fa-php", name: "PHP" },
+              { icon: "fa-solid fa-brain", name: "Gemini" },
+              { icon: "fa-solid fa-terminal", name: "Claude Code" },
+              { icon: "fa-solid fa-code", name: "Codex" },
+              { icon: "fa-solid fa-robot", name: "Ollama" },
+              { icon: "fa-solid fa-microchip", name: "Llama.cpp" },
+            ]} />
+
+            <SkillGroup number="03" color="gold" label="Cloud & Services" skills={[
               { icon: "fa-brands fa-aws", name: "AWS" },
-              { icon: "fa-brands fa-docker", name: "Docker" },
-              { icon: "fa-solid fa-server", name: "Nginx" },
-              { icon: "fa-brands fa-linux", name: "Linux" },
-            ]} />
-
-            <SkillGroup number="03" color="gold" label="Database" skills={[
-              { icon: "fa-solid fa-database", name: "PostgreSQL" },
-              { icon: "fa-solid fa-database", name: "MySQL" },
               { icon: "fa-solid fa-fire-flame-curved", name: "Firebase" },
+              { icon: "fa-brands fa-cloudflare", name: "Cloudflare" },
+              { icon: "fa-solid fa-bolt", name: "Supabase" },
+              { icon: "fa-solid fa-server", name: "Hostinger" },
+              { icon: "fa-solid fa-network-wired", name: "Proxmox VE" },
             ]} />
 
-            <div className="md:col-span-2 lg:col-span-3 lg:w-2/3 pt-8 border-t border-border">
-              <SkillGroup number="04" color="gold" label="Foundations, Tools & OS" skills={[
-                { icon: "fa-solid fa-code", name: "C++ / C# / C / Java" },
-                { icon: "fa-brands fa-git-alt", name: "Git / GitHub" },
-                { icon: "fa-solid fa-cube", name: "OOP / DSA" },
-                { icon: "fa-brands fa-windows", name: "Windows / macOS / Linux" },
-              ]} />
-            </div>
+            <SkillGroup number="04" color="gold" label="Database & Data" skills={[
+              { icon: "fa-solid fa-database", name: "PostgreSQL" },
+              { icon: "fa-solid fa-database", name: "MySQL / MariaDB" },
+              { icon: "fa-solid fa-fire", name: "Firestore (NoSQL)" },
+              { icon: "fa-solid fa-diagram-project", name: "Relational DB Design" },
+            ]} />
+
+            <SkillGroup number="05" color="gold" label="DevOps & Tools" skills={[
+              { icon: "fa-brands fa-docker", name: "Docker" },
+              { icon: "fa-brands fa-git-alt", name: "Git / GitHub" },
+              { icon: "fa-brands fa-linux", name: "Linux (Desktop & Server)" },
+              { icon: "fa-solid fa-server", name: "Nginx" },
+              { icon: "fa-solid fa-network-wired", name: "Proxmox VE" },
+              { icon: "fa-solid fa-layer-group", name: "Full-Stack Architecture" },
+              { icon: "fa-solid fa-hard-drive", name: "Server Architecture" },
+              { icon: "fa-solid fa-folder-tree", name: "Samba / File Server Mgmt" },
+              { icon: "fa-solid fa-screwdriver-wrench", name: "PC Troubleshooting" },
+            ]} />
+
+            <SkillGroup number="06" color="gold" label="Foundational CS" skills={[
+              { icon: "fa-solid fa-cube", name: "OOP" },
+              { icon: "fa-solid fa-sitemap", name: "DSA" },
+              { icon: "fa-solid fa-code", name: "C" },
+              { icon: "fa-solid fa-code", name: "C++" },
+              { icon: "fa-solid fa-code", name: "C#" },
+            ]} />
           </div>
         </div>
       </div>
