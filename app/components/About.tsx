@@ -176,10 +176,12 @@ export default function About() {
               { icon: "fa-solid fa-diagram-project", name: "Relational DB Design" },
             ]} />
 
-            <SkillGroup number="05" color="gold" label="DevOps & Tools" skills={[
+            <SkillGroup number="05" color="gold" label="DevOps, Tools & OS" skills={[
               { icon: "fa-brands fa-docker", name: "Docker" },
               { icon: "fa-brands fa-git-alt", name: "Git / GitHub" },
-              { icon: "fa-brands fa-linux", name: "Linux (Desktop & Server)" },
+              { icon: "fa-brands fa-linux", name: "Linux" },
+              { icon: "fa-brands fa-windows", name: "Windows" },
+              { icon: "fa-brands fa-apple", name: "macOS" },
               { icon: "fa-solid fa-server", name: "Nginx" },
               { icon: "fa-solid fa-network-wired", name: "Proxmox VE" },
               { icon: "fa-solid fa-layer-group", name: "Full-Stack Architecture" },
